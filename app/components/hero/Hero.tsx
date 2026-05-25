@@ -15,7 +15,6 @@ export default function Hero() {
     useEffect(() => {
         const hero = heroRef.current;
         
-
         if (!hero) {
             return;
         }

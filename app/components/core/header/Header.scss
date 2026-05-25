@@ -26,6 +26,10 @@ $animation-scroll-time: 0.3s;
             transform: translateY(-100%);
             opacity: 0;    
         }
+
+        .qr-button-hover-wrapper {
+            display: none;
+        }
     }
 
     .logo {
@@ -378,6 +382,16 @@ $animation-scroll-time: 0.3s;
                 }
             }
         }
+
+        .header__right_part {
+            .s-button-launch-wrapper-reverse {
+                position: relative;
+            }
+
+            .qr-button-hover-wrapper {
+                display: block;
+            }    
+        }
     }
 
     .header-wrapper {
@@ -394,12 +408,6 @@ $animation-scroll-time: 0.3s;
         display: flex;
         column-gap: 40px;
         align-items: center;    
-    }
-
-    .header__right_part {
-        .s-button-launch-wrapper-reverse {
-            position: relative;
-        }
     }
 
     .main-menu {
@@ -420,26 +428,25 @@ $animation-scroll-time: 0.3s;
     }
 
     .header-hover {
-        display: block;
-        max-height: 0;
+        display: flex;
+        justify-content: flex-end;
+        // max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-
-        &:before {
-            content: '';
-            display: block;
-            height: 1px;
-            margin-top: 12px;
-            background: url('/svg/divider-header-horizaontal.svg') repeat-x center center;
-            opacity: 0;
-        }
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        left: 0;
     }
 
     .header-hover__wrapper {
-        height: 200px;
+        // height: 200px;
         display: flex;
         justify-content: center;
-        margin-bottom: -12px;
+        // margin-bottom: -12px;
+        background: $color-white;
+        
     }
 
     .header-qr-code, .header-socials {
