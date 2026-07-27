@@ -1,6 +1,7 @@
 import {inter, bion} from './fonts';
 import "@/app/styles/global.scss";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { SITE_URL } from './utils/constants';
 
 const title  = 'MCard — Виртуальная карта Mastercard для оплаты криптой и рублями';
@@ -54,6 +55,19 @@ export default function RootLayout({
       <body>
         {children}
       </body>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-3F7YZBP07P"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-3F7YZBP07P');
+        `}
+      </Script>
     </html>
   );
 }
