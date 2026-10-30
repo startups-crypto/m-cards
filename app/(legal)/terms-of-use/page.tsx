@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
+import { TERM_PAGE_LINK } from "@/app/utils/constants";
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: TERM_PAGE_LINK,
+  },
+};
 
 export default function TermsOfUse() {
   return (

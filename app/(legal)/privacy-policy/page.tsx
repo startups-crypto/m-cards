@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+import { PRIVACY_POLICY_PAGE_LINK } from "@/app/utils/constants";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: PRIVACY_POLICY_PAGE_LINK,
+  },
+};
+
 type PrivacyContentBlock = {
   type: "h2" | "subheading" | "p";
   text: string;
