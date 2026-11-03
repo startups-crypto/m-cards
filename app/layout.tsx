@@ -29,7 +29,7 @@ export default function RootLayout({
   const className = `${inter.variable} ${bion.variable}`;
 
   return (
-    <html lang="en" className={className}>
+    <html lang="ru" className={className}>
       <body>
         {children}
       </body>
