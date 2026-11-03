@@ -1,4 +1,3 @@
-import { SITE_URL } from "@/app/utils/constants";
 import Banners from "../components/banners/Banners";
 import Capabilities from "../components/capabilities/Capabilities";
 import Commission from "../components/commission/Commission";
@@ -13,8 +12,6 @@ import Security from "../components/security/Security";
 export default function Home() {
   return (
       <main role="main">
-          {/* React hoists this into <head>; Next.js metadata strips the root URL's trailing slash. */}
-          <link rel="canonical" href={SITE_URL} />
           <Hero />
           <RunningLine />
           <HowItWork />

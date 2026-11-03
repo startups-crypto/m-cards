@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { TERM_PAGE_LINK } from "@/app/utils/constants";
+import { createPageMetadata } from "@/app/utils/metadata";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: TERM_PAGE_LINK,
-  },
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Условия использования виртуальных карт | MCard",
+  description: "Условия использования виртуальных карт MCard: ограничения, правила использования, возврата и обращения в поддержку",
+  canonical: TERM_PAGE_LINK,
+});
 
 export default function TermsOfUse() {
   return (

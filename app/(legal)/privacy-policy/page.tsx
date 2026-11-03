@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { PRIVACY_POLICY_PAGE_LINK } from "@/app/utils/constants";
+import { createPageMetadata } from "@/app/utils/metadata";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: PRIVACY_POLICY_PAGE_LINK,
-  },
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Политика конфиденциальности | MCard",
+  description: "Как MCard обрабатывает и защищает персональные данные пользователей сайта и сервиса",
+  canonical: PRIVACY_POLICY_PAGE_LINK,
+});
 
 type PrivacyContentBlock = {
   type: "h2" | "subheading" | "p";
