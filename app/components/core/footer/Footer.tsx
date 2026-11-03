@@ -29,8 +29,8 @@ export default function Footer() {
                             <p>О нас</p>
                             <nav>
                                 <ul>
-                                    <li><Link href="#card-works">Где работает карта</Link></li>
-                                    <li><Link href="#partner-program">Партнёрская программа</Link></li>
+                                    <li><Link href="/#card-works">Где работает карта</Link></li>
+                                    <li><Link href="/#partner-program">Партнёрская программа</Link></li>
                                     <li><a href={SUPPORT_URL} target="_blank" rel="nonoopener nofollow">Поддержка</a></li>
                                 </ul>
                             </nav>
@@ -39,10 +39,10 @@ export default function Footer() {
                             <p>Узнать больше</p>
                             <nav>
                                 <ul>
-                                    <li><Link href="#how-it-work">Как это работает</Link></li>
-                                    <li><Link href="#faqs">FAQs</Link></li>
-                                    <li><Link href="#fees">Комиссии</Link></li>
-                                    <li><Link href="#security">Безопасность</Link></li>
+                                    <li><Link href="/#how-it-work">Как это работает</Link></li>
+                                    <li><Link href="/#faqs">FAQs</Link></li>
+                                    <li><Link href="/#fees">Комиссии</Link></li>
+                                    <li><Link href="/#security">Безопасность</Link></li>
                                 </ul>
                             </nav>
                         </div>
