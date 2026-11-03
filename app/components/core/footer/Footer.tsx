@@ -14,9 +14,9 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={styles.footerWrapper}>
                 <div className={styles.footerHeader}>
-                    <div className={clsx("svg", styles.footerLogo)}>
+                    <Link href="/" aria-label="На главную MCard" className={clsx("svg", styles.footerLogo)}>
                         <FooterLogo />
-                    </div>
+                    </Link>
                     <Socials style={styles.footerSocials} />
                 </div>
                 <div className={styles.footerMiddle}>
@@ -50,8 +50,8 @@ export default function Footer() {
                             <p>Следите за нами</p>
                             <nav>
                                 <ul>
-                                    <li><a href={INSTAGRAM_URL} target="_blank" rel="nonoopener nofollow">Instagram</a></li>
-                                    <li><a href={TELEGRAM_URL} target="_blank" rel="nonoopener nofollow">Telegram</a></li>
+                                    <li><a aria-label="MCard в Instagram" href={INSTAGRAM_URL} target="_blank" rel="nonoopener nofollow">Instagram</a></li>
+                                    <li><a aria-label="MCard в Telegram" href={TELEGRAM_URL} target="_blank" rel="nonoopener nofollow">Telegram</a></li>
                                 </ul>
                             </nav>
                         </div>

@@ -124,7 +124,7 @@ export default function Security () {
                 <div className={styles.securityCards} style={{marginTop: marginState + "px"}}>
                     <div className={clsx(styles.securityCard, hiddenCards[0] && styles["securityCard--hide"])}>
                         <div className={clsx("svg", styles.icon)}>
-                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_115_2714)">
                                 <mask id="mask0_115_2714" mask-type="luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
                                 <path d="M50 0H0V50H50V0Z" fill="white"/>
@@ -147,7 +147,7 @@ export default function Security () {
 
                     <div className={clsx(styles.securityCard, hiddenCards[1] && styles["securityCard--hide"])}>
                         <div className={clsx("svg", styles.icon)}>
-                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_115_2721)">
                                 <mask id="mask0_115_2721" mask-type="luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
                                 <path d="M50 0H0V50H50V0Z" fill="white"/>
@@ -171,7 +171,7 @@ export default function Security () {
 
                     <div className={clsx(styles.securityCard, hiddenCards[2] && styles["securityCard--hide"])}>
                         <div className={clsx("svg", styles.icon)}>
-                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_115_2729)">
                                 <mask id="mask0_115_2729" mask-type="luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
                                 <path d="M50 0H0V50H50V0Z" fill="white"/>
@@ -207,7 +207,7 @@ export default function Security () {
 
                     <div className={clsx(styles.securityCard, hiddenCards[3] && styles["securityCard--hide"])}>
                         <div className={clsx("svg", styles.icon)}>
-                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_115_2749)">
                                 <mask id="mask0_115_2749" mask-type="luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
                                 <path d="M50 0H0V50H50V0Z" fill="white"/>
@@ -231,7 +231,7 @@ export default function Security () {
 
                     <div className={clsx(styles.securityCard, hiddenCards[4] && styles["securityCard--hide"])}>
                         <div className={clsx("svg", styles.icon)}>
-                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_115_2757)">
                                 <mask id="mask0_115_2757" mask-type="luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
                                 <path d="M50 0H0V50H50V0Z" fill="white"/>

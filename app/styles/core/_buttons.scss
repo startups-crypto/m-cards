@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     
-    .qr-button {
+    .qr-control {
         display: none;
     }
 }
@@ -144,6 +144,16 @@ button {
     }
 }
 
+.qr-control {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.qr-button-hover-wrapper[hidden] {
+    display: none !important;
+}
+
 .qr-button {
     width: 56px;
     height: 56px;
@@ -249,7 +259,7 @@ button {
 
     .s-button-launch-wrapper {
         column-gap: 8px;
-        .qr-button {
+        .qr-control {
             display: flex;
         }
     }
@@ -275,13 +285,12 @@ button {
             }
         }
 
-        &:hover {
-            .qr-button-hover-wrapper {
-                opacity: 1;
-                transform: scale(1);
-                pointer-events: auto;
-            }        
-        }
+    }
+
+    .qr-control[data-open="true"] .qr-button-hover-wrapper {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
     }
 
     .qr-button-hover-wrapper {

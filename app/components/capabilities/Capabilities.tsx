@@ -47,7 +47,7 @@ export default function Capabilities () {
                 >
                     <SwiperSlide className={styles.swiperCellItem}>
                         <div className={styles.icon}>
-                            <svg width="60" height="52" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="60" height="52" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_225_9358)">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M25.0048 34.6423L20.0071 43.3042L15.0039 51.9662H25.0048L30.0025 43.3042L35.0002 34.6423L40.0034 25.9803H49.9989L45.0012 17.3184H35.0002L30.0025 25.9803L25.0048 34.6423Z" fill="#00B4FF"/>
                                 <path fillRule="evenodd" clipRule="evenodd" d="M45.0009 34.6426L40.0032 43.3045L35 51.9665H45.0009L49.9986 43.3045H59.9995L55.0018 34.6426H45.0009Z" fill="#00B4FF"/>
@@ -64,7 +64,7 @@ export default function Capabilities () {
                     </SwiperSlide>
                     <SwiperSlide className={clsx(styles.swiperCellItem,styles.swiperCellItemWhite)}>
                         <div className={styles.icon}>
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_225_9377)">
                                 <path d="M35.7499 9.70335L24.25 16.529V6.82562L35.7499 0V9.70335Z" fill="#00B4FF"/>
                                 <path d="M19.7104 11.5825L16.4058 24.5407L9.54688 17.6818L12.8516 4.72363L19.7104 11.5825Z" fill="#00B4FF"/>
@@ -86,7 +86,7 @@ export default function Capabilities () {
                     </SwiperSlide>
                     <SwiperSlide className={styles.swiperCellItem}>
                         <div className={styles.icon}>
-                            <svg width="60" height="50" viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="60" height="50" viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_225_9367)">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M0 18.3973V10.6428C5.8695 10.6428 10.5964 5.9159 10.5964 0H18.3509C18.3509 10.1846 10.144 18.3973 0 18.3973Z" fill="#00B4FF"/>
                                 <path fillRule="evenodd" clipRule="evenodd" d="M41.6094 0H49.3638C49.3638 5.9159 54.1314 10.6428 60.0067 10.6428V18.3973C49.8684 18.3973 41.6152 10.1846 41.6152 0H41.6094Z" fill="#00B4FF"/>
@@ -104,7 +104,7 @@ export default function Capabilities () {
                     </SwiperSlide>
                     <SwiperSlide className={clsx(styles.swiperCellItem,styles.swiperCellItemWhite)}>
                         <div className={styles.icon}>
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_225_9344)">
                                 <path d="M30.0012 22.3988L24.2266 16.0621V5.77463C24.2266 2.58426 26.8108 0 30.0012 0C33.1916 0 35.7758 2.58426 35.7758 5.77463V16.0621L30.0012 22.3988Z" fill="#00B4FF"/>
                                 <path d="M24.6241 24.625L16.0613 24.2283L8.78789 16.9549C6.53424 14.7013 6.53424 11.0425 8.78789 8.78887C11.0415 6.53522 14.7003 6.53522 16.9539 8.78887L24.2273 16.0623L24.6241 24.625Z" fill="#00B4FF"/>

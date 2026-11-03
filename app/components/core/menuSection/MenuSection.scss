@@ -1,6 +1,11 @@
 @use '@/app/styles/core/variables' as *;
 
 .mobile-menu-section {
+    margin: 0;
+    border: 0;
+    max-width: none;
+    max-height: none;
+    color: $color-black;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,6 +18,10 @@
     backdrop-filter: blur(20px);
     transition: opacity 0.3s;
     pointer-events: none;
+
+    &::backdrop {
+        background: transparent;
+    }
 
     &.active {
         pointer-events: auto;

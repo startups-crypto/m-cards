@@ -51,7 +51,7 @@ export default function Information () {
                     </div>
                     <div className={styles.noAnswer}>
                         <div className={clsx("svg",styles.noAnswerIcon)}>
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" focusable="false" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <mask id="mask0_165_24257" mask-type="luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="60" height="60">
                                 <path d="M60 0H0V60H60V0Z" fill="white"/>
                                 </mask>

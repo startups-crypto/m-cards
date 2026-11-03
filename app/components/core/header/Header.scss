@@ -12,6 +12,10 @@ $animation-scroll-time: 0.3s;
     display: none;
 }
 
+.qr-control.header-qr-control {
+    display: none;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -331,6 +335,14 @@ $animation-scroll-time: 0.3s;
 }
 
 @media only screen and (min-width: $break-point-small) {
+    .header .header-menu-button {
+        display: none;
+    }
+
+    .qr-control.header-qr-control {
+        display: inline-flex;
+    }
+
     .header {
         height: 90px;
         padding-left: 20px;
