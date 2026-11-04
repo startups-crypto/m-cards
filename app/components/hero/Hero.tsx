@@ -6,11 +6,23 @@ import { useEffect, useRef, useState } from 'react';
 import QrButton from '../core/qrButton/QrButton';
 import { TG_BOT_URL } from '@/app/utils/constants';
 
+// Matches $break-point-small in app/styles/core/_variables.scss.
+const desktopVideoMedia = '(min-width: 1080px)';
 
 export default function Hero() {
     const heroRef = useRef<HTMLElement>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
     
     const [isHeroButtonEnd, setIsHeroButtonEnd] = useState(false);
+
+    useEffect(() => {
+        const desktop = window.matchMedia(desktopVideoMedia);
+        const reloadVideo = () => videoRef.current?.load();
+
+        // Video sources are evaluated when the browser selects a resource.
+        desktop.addEventListener('change', reloadVideo);
+        return () => desktop.removeEventListener('change', reloadVideo);
+    }, []);
 
     useEffect(() => {
         const hero = heroRef.current;
@@ -65,12 +77,9 @@ export default function Hero() {
     return (
         <section ref={heroRef} className={styles.hero}>
             <h1>Трать так, будто никто не смотрит</h1>
-            <video autoPlay muted loop playsInline preload="auto" className={styles.heroMobileVideo}>
+            <video ref={videoRef} autoPlay muted loop playsInline preload="auto">
+                <source src="/video/hero_d.mp4" type="video/mp4" media={desktopVideoMedia} />
                 <source src="/video/hero_m.mp4" type="video/mp4" />
-            </video>
-
-            <video autoPlay muted loop playsInline preload="auto" className={styles.heroDesctopVideo}>
-                <source src="/video/hero_d.mp4" type="video/mp4" />
             </video>
 
             {/* {!firstState && <Image className={styles.heroBgMob} src="/images/hero-m.jpg"  alt="hero bg mobile" quality={100} loading="eager" sizes="100vw" fill priority/>}

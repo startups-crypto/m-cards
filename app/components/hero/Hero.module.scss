@@ -114,10 +114,6 @@
     bottom: 22%;
 }
 
-.heroDesctopVideo {
-    display: none;
-}
-
 @media only screen and (min-width: 500px) {
 
     .heroContainer {
@@ -249,14 +245,6 @@
     .heroGoogle {
         width: 76px;
         height: 30px;
-    }
-
-    .heroMobileVideo {
-        display: none;
-    }
-
-    .heroDesctopVideo {
-        display: block;
     }
 }
 
