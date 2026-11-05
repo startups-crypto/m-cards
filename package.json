@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build",
+    "build": "next build && node scripts/mobile-critical-css.mjs",
     "start": "next start",
     "lint": "eslint"
   },
@@ -22,8 +22,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "beasties": "^0.5.5",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "htmlparser2": "^12.0.0",
+    "postcss": "^8.5.32",
     "typescript": "^5"
   }
 }

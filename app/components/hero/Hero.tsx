@@ -47,7 +47,7 @@ export default function Hero() {
             }
 
             video.poster = posterRef.current?.currentSrc || '';
-            video.src = desktop.matches ? '/video/hero_d.mp4' : '/video/hero_m.mp4';
+            video.src = desktop.matches ? '/video/hero_d.optimized.mp4' : '/video/hero_m.optimized.mp4';
         };
 
         const onPageLoad = async () => {
@@ -127,7 +127,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section ref={heroRef} className={styles.hero}>
+        <section ref={heroRef} className={styles.hero} data-critical-states={`${styles.heroButtonWrapperEnd} ${styles.heroVideoPlaying}`}>
             <link rel="preload" as="image" media={desktopMedia} imageSrcSet={desktopPoster.srcSet} imageSizes={desktopPoster.sizes} fetchPriority="high" />
             <link rel="preload" as="image" media={`not all and ${desktopMedia}`} imageSrcSet={mobilePoster.srcSet} imageSizes={mobilePoster.sizes} fetchPriority="high" />
             <h1>Трать так, будто никто не смотрит</h1>
