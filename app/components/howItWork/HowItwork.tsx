@@ -7,6 +7,16 @@ import SectionLabel from '../sectionLabel/SectionLabel';
 
 const HOVER_BREAKPOINT = 1400;
 
+// Use the expanded card width on desktop so an image is ready when its card opens.
+const CARD_IMAGE_SIZES = [
+    '(min-width: 1740px) min(508px, calc(46vw - 371px))',
+    '(min-width: 1640px) calc(26.68vw - 49px)',
+    '(min-width: 1440px) calc(26.68vw - 43px)',
+    '(min-width: 1080px) calc(25vw - 55px)',
+    '(min-width: 764px) calc(50vw - 58px)',
+    'min(468px, calc(100vw - 72px))',
+].join(', ');
+
 export default function HowItWork () {
     const [activeCard, setActiveCard] = useState(0);
     const [isHoverEnabled, setIsHoverEnabled] = useState(false);
@@ -53,7 +63,7 @@ export default function HowItWork () {
                             </div>
                         </div>
                         <div className={styles.cardImagePart}>
-                            <Image src="/images/how-it-work-card1.png"  alt="How it work card" quality={100} loading="lazy" width="1016" height="1004"/>
+                            <Image src="/images/how-it-work-card1.png"  alt="How it work card" quality={100} loading="lazy" width="1016" height="1004" sizes={CARD_IMAGE_SIZES}/>
                         </div>
                     </div>
                     <div 
@@ -82,7 +92,7 @@ export default function HowItWork () {
                                 <p><span>Мгновенно, без бумаг и ожидания</span></p>
                             </div>
                         </div>
-                        <div className={styles.cardImagePart}><Image src="/images/how-it-work-card2.png"  alt="How it work card" quality={100} loading="lazy" width="1016" height="1004"/></div>
+                        <div className={styles.cardImagePart}><Image src="/images/how-it-work-card2.png"  alt="How it work card" quality={100} loading="lazy" width="1016" height="1004" sizes={CARD_IMAGE_SIZES}/></div>
                     </div>
                     <div 
                         className={clsx(styles.card, { [styles.active]: activeCard === 2 })}
@@ -108,7 +118,7 @@ export default function HowItWork () {
                             </div>
                         </div>
                         <div className={styles.cardImagePart}>
-                            <Image src="/images/how-it-work-card3.png"  alt="How it work card" quality={100} loading="lazy" width="1016" height="1004"/>
+                            <Image src="/images/how-it-work-card3.png"  alt="How it work card" quality={100} loading="lazy" width="1016" height="1004" sizes={CARD_IMAGE_SIZES}/>
                         </div>
                     </div>
                     <div 
@@ -135,7 +145,7 @@ export default function HowItWork () {
                             </div>
                         </div>
                         <div className={styles.cardImagePart}>
-                            <Image src="/images/how-it-work-card4.png"  alt="How it work card" quality={100} loading="lazy" width="1016" height="1004"/>
+                            <Image src="/images/how-it-work-card4.png"  alt="How it work card" quality={100} loading="lazy" width="1016" height="1004" sizes={CARD_IMAGE_SIZES}/>
                         </div>
                     </div>
                 </div>
