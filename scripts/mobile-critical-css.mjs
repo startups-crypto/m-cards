@@ -19,7 +19,9 @@ assert(html.includes('data-critical-states='), 'Home must contain the critical H
 const head = html.slice(0, html.indexOf('</head>'));
 const links = [...head.matchAll(/<link\b[^>]*\brel="stylesheet"[^>]*>/g)].map(([link]) => link);
 assert(links.length, 'Expected Next stylesheet resources in the home head');
-assert(links.every(link => /href="\/_next\/[^"]+\.css"/.test(link) && !/\bmedia=/.test(link)),
+// Vercel adds ?dpl=... for deployment skew protection. Beasties strips URL
+// queries/fragments when reading local assets; keep them on the emitted links.
+assert(links.every(link => /href="\/_next\/[^"?#]+\.css(?:[?#][^"]*)?"/.test(link) && !/\bmedia=/.test(link)),
   'Review critical CSS delivery: Next stylesheet markup has changed');
 
 // Read the actual Sass breakpoint rather than maintaining a second value in JS.
