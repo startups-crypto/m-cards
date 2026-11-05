@@ -5,23 +5,75 @@ import styles from './Hero.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import QrButton from '../core/qrButton/QrButton';
 import { TG_BOT_URL } from '@/app/utils/constants';
+import { getImageProps } from 'next/image';
 
 // Matches $break-point-small in app/styles/core/_variables.scss.
-const desktopVideoMedia = '(min-width: 1080px)';
+const desktopMedia = '(min-width: 1080px)';
+const { props: desktopPoster } = getImageProps({
+    src: '/images/hero-poster-desktop.png',
+    alt: '',
+    width: 1920,
+    height: 1462,
+    sizes: '100vw',
+});
+const { props: mobilePoster } = getImageProps({
+    src: '/images/hero-poster-mobile.png',
+    alt: '',
+    width: 720,
+    height: 2258,
+    sizes: '100vw',
+    loading: 'eager',
+    fetchPriority: 'high',
+});
 
 export default function Hero() {
     const heroRef = useRef<HTMLElement>(null);
+    const posterRef = useRef<HTMLImageElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
     
     const [isHeroButtonEnd, setIsHeroButtonEnd] = useState(false);
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
     useEffect(() => {
-        const desktop = window.matchMedia(desktopVideoMedia);
-        const reloadVideo = () => videoRef.current?.load();
+        const desktop = window.matchMedia(desktopMedia);
+        let canLoadVideo = false;
+        let disposed = false;
 
-        // Video sources are evaluated when the browser selects a resource.
-        desktop.addEventListener('change', reloadVideo);
-        return () => desktop.removeEventListener('change', reloadVideo);
+        const loadVideo = () => {
+            const video = videoRef.current;
+
+            if (!canLoadVideo || !video) {
+                return;
+            }
+
+            video.poster = posterRef.current?.currentSrc || '';
+            video.src = desktop.matches ? '/video/hero_d.mp4' : '/video/hero_m.mp4';
+        };
+
+        const onPageLoad = async () => {
+            await document.fonts.ready;
+            await posterRef.current?.decode().catch(() => {});
+
+            if (disposed) {
+                return;
+            }
+
+            canLoadVideo = true;
+            loadVideo();
+        };
+
+        if (document.readyState === 'complete') {
+            void onPageLoad();
+        } else {
+            window.addEventListener('load', onPageLoad, { once: true });
+        }
+
+        desktop.addEventListener('change', loadVideo);
+        return () => {
+            disposed = true;
+            window.removeEventListener('load', onPageLoad);
+            desktop.removeEventListener('change', loadVideo);
+        };
     }, []);
 
     useEffect(() => {
@@ -76,14 +128,21 @@ export default function Hero() {
 
     return (
         <section ref={heroRef} className={styles.hero}>
+            <link rel="preload" as="image" media={desktopMedia} imageSrcSet={desktopPoster.srcSet} imageSizes={desktopPoster.sizes} fetchPriority="high" />
+            <link rel="preload" as="image" media={`not all and ${desktopMedia}`} imageSrcSet={mobilePoster.srcSet} imageSizes={mobilePoster.sizes} fetchPriority="high" />
             <h1>Трать так, будто никто не смотрит</h1>
-            <video ref={videoRef} autoPlay muted loop playsInline preload="auto">
-                <source src="/video/hero_d.mp4" type="video/mp4" media={desktopVideoMedia} />
-                <source src="/video/hero_m.mp4" type="video/mp4" />
-            </video>
-
-            {/* {!firstState && <Image className={styles.heroBgMob} src="/images/hero-m.jpg"  alt="hero bg mobile" quality={100} loading="eager" sizes="100vw" fill priority/>}
-            {!firstState && <Image className={styles.heroBg} src="/images/hero-b.jpg"  alt="hero bg" quality={100} loading="eager" width="3840" height="2924" priority/>} */}
+            <picture className={styles.heroPoster}>
+                <source media={desktopMedia} srcSet={desktopPoster.srcSet} sizes={desktopPoster.sizes} width={desktopPoster.width} height={desktopPoster.height} />
+                <img {...mobilePoster} ref={posterRef} alt="" />
+            </picture>
+            <video
+                ref={videoRef}
+                className={clsx(styles.heroVideo, isVideoPlaying && styles.heroVideoPlaying)}
+                autoPlay muted loop playsInline preload="none"
+                onPlaying={() => setIsVideoPlaying(true)}
+                onEmptied={() => setIsVideoPlaying(false)}
+                onError={() => setIsVideoPlaying(false)}
+            />
             
             <div className={clsx("m-container", styles.heroContainer)}>
                 <div className={styles.heroTextPart}>

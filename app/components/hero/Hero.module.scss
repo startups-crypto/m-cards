@@ -11,7 +11,8 @@
         color: $color-white;
     }
 
-    video {
+    video,
+    .heroPoster img {
         position: absolute;
         top: 0;
         left: 0;
@@ -29,6 +30,20 @@
         height: 0;
         overflow: hidden;
     }
+}
+
+.heroPoster {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.heroVideo {
+    opacity: 0;
+}
+
+.heroVideoPlaying {
+    opacity: 1;
 }
 
 .heroTextPart {
