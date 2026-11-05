@@ -60,6 +60,10 @@
     min-height: 40px;
     border-radius: 30px;
     overflow: hidden;
+
+    img {
+        width: 100%;
+    }
 }
 
 .number {
@@ -139,6 +143,12 @@
         align-items: flex-end;
         padding: 0;
         padding-right: 10px;
+    }
+
+    .cardImagePart {
+        img {
+            width: auto;
+        }
     }
 }
 
